@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import AddTask from '../components/AddTask.vue'
-import EditTask from '../components/EditTask.vue'
-import FinishedTasks from '../components/FinishedTasks.vue'
-import PendingTasks from '../components/PendingTasks.vue'
-import SaveLoadTasks from '../components/SaveLoadTasks.vue'
+import AddTask from '../components/pages/AddTask.vue'
+import EditTask from '../components/pages/EditTask.vue'
+import FinishedTasks from '../components/pages/FinishedTasks.vue'
+import PendingTasks from '../components/pages/PendingTasks.vue'
+import SaveLoadTasks from '../components/pages/SaveLoadTasks.vue'
 
 Vue.use(Router)
 
