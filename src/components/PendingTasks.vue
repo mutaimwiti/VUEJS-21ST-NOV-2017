@@ -2,7 +2,6 @@
     <div>
         <h1>Pending tasks</h1>
         <template v-if="tasks.length">
-            <h3>Pending tasks</h3>
             <table>
                 <thead>
                 <tr>
@@ -35,9 +34,12 @@
         name: 'PendingTasks',
 
         computed: {
-            tasks(){
-                return store.state.tasks
+            tasks() {
+                return store.state.tasks.filter(function (task) {
+                    return task.status === 0;
+                })
             }
         }
+
     }
 </script>
