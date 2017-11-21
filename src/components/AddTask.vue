@@ -17,14 +17,15 @@
         name: 'AddTask',
 
         data(){
-            return{
+            return {
                 task: ''
             }
         },
 
-        methods:{
-            add(){
-                store.dispatch({ type: 'addTask', task: this.task  })
+        methods: {
+            add() {
+                store.dispatch({ type: 'addTask', task: this.task  });
+                this.task = '';
             }
         }
     }
