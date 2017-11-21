@@ -13,6 +13,14 @@ const mutations = {
                 name: task, status: 0
             }
         )
+    },
+
+    finishTask(state, {task}){
+        state.tasks[state.tasks.indexOf(task)].status = 1;
+    },
+
+    deleteTask(state, {task}){
+        state.tasks.splice(state.tasks.indexOf(task), 1);
     }
 };
 

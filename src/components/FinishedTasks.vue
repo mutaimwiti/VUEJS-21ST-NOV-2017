@@ -13,7 +13,7 @@
                 <tr v-for="task in tasks">
                     <td>{{task.name}}</td>
                     <td>
-                        <button v-on:click.prevent="removeTask(task)">Remove</button>
+                        <button v-on:click.prevent="deleteTask(task)">Delete</button>
                     </td>
                 </tr>
                 </tbody>
@@ -37,6 +37,12 @@
                 return store.state.tasks.filter(function (task) {
                     return task.status === 1;
                 })
+            }
+        },
+
+        methods: {
+            deleteTask(task){
+                store.commit('deleteTask', {task: task});
             }
         }
 
