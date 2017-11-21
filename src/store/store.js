@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+
 Vue.use(Vuex);
 
 const state = {
@@ -21,6 +22,10 @@ const mutations = {
 
     deleteTask(state, {task}){
         state.tasks.splice(state.tasks.indexOf(task), 1);
+    },
+
+    initLoadedTasks(state, {tasks}){
+        state.tasks = tasks;
     }
 };
 
