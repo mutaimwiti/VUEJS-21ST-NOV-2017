@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Finished tasks</h1>
+        <h3>Finished tasks</h3>
         <template v-if="tasks.length">
             <table>
                 <thead>

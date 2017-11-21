@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Edit task</h1>
+        <h3>Edit task</h3>
         <p>
             Edit your task
         </p>

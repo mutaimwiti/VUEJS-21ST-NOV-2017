@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Pending tasks</h1>
+        <h3>Pending tasks</h3>
         <template v-if="tasks.length">
             <table>
                 <thead>
