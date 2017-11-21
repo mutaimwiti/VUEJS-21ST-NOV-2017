@@ -14,7 +14,7 @@
                     <td>{{task.name}}</td>
                     <td>
                         <button v-on:click.prevent="finishTask(task)">Done</button>
-                        <button v-on:click.prevent="deleteTask(task)">Delete</button>
+                        <button v-on:click.prevent="deleteTask(task)" v-danger>Delete</button>
                     </td>
                 </tr>
                 </tbody>
