@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>Add task</h3>
-        <form v-on:submit.prevent="add">
+        <form v-on:submit.prevent="add()">
             <label for="task">Enter  a task</label>
             <input id="task" v-model.trim="task">
         </form>
@@ -24,7 +24,7 @@
 
         methods: {
             add() {
-                store.dispatch({ type: 'addTask', task: this.task  });
+                store.commit('addTask', {task: this.task});
                 this.task = '';
             }
         }

@@ -24,16 +24,9 @@ const mutations = {
     }
 };
 
-const actions = {
-    addTask(context, payload) {
-        context.commit('addTask', payload);
-    }
-};
-
 const store = new Vuex.Store({
     state: state,
     mutations: mutations,
-    actions: actions
 });
 
 export default store;
