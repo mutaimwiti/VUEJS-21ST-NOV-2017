@@ -2,8 +2,7 @@
     <div>
         <h3>Save Load Tasks</h3>
         <form>
-            <!--button type="button" v-on:click="save()">click to save tasks</button-->
-            <button type="button" v-on:click="load()">click to load saved tasks</button>
+            <component :is="currentButton" v-on:load="load" v-on:save="save"></component>
         </form>
     </div>
 </template>
@@ -19,12 +18,14 @@
 
         data(){
             return {
-                task: ''
+                task: '',
+                currentButton: 'load-button'
             }
         },
 
         methods: {
-            /*save() {
+            save() {
+                this.currentButton = 'load-button'
                 axios.post('http://vuetasks.app', {
                     tasks: store.state.tasks
                 })
@@ -32,9 +33,10 @@
                     .catch(e => {
                         //do something about the errors
                     })
-            },*/
+            },
 
             load(){
+                this.currentButton = 'save-button'
                 axios.get('http://vuetasks.app')
                     .then(response => {
                         // JSON responses are automatically parsed.
@@ -43,6 +45,16 @@
                     .catch(e => {
 
                     })
+            }
+        },
+
+        components: {
+            'load-button': {
+                template: '<button type="button" v-on:click="$emit(`load`)">click to load saved tasks</button>'
+            },
+
+            'save-button': {
+                template: '<button type="button" v-on:click="$emit(`save`)">click to save current tasks</button>'
             }
         }
     }
